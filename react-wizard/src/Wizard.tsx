@@ -31,7 +31,9 @@ function Wizard({ children }: Props) {
   };
 
   return (
-    <WizardContext.Provider value={{ canPrev, canNext, prev, next, stepIndex }}>
+    <WizardContext.Provider
+      value={{ canPrev, canNext, prev, next, stepIndex, stepCount }}
+    >
       {children}
     </WizardContext.Provider>
   );

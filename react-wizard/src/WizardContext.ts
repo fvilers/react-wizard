@@ -8,6 +8,7 @@ type WizardContextType = {
   prev: NavigationFunction;
   next: NavigationFunction;
   stepIndex: number;
+  stepCount: number;
 };
 
 const WizardContext = createContext<WizardContextType>({
@@ -16,6 +17,7 @@ const WizardContext = createContext<WizardContextType>({
   prev: () => {},
   next: () => {},
   stepIndex: 0,
+  stepCount: 0,
 });
 
 export function useWizard() {

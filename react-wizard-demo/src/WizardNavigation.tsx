@@ -1,7 +1,7 @@
 import { useWizard } from "@fvilers/react-wizard";
 
 function WizardNavigation() {
-  const { canPrev, canNext, prev, next, stepIndex } = useWizard();
+  const { canPrev, canNext, prev, next, stepIndex, stepCount } = useWizard();
 
   return (
     <div>
@@ -11,7 +11,7 @@ function WizardNavigation() {
       <button disabled={!canNext} onClick={next}>
         Next
       </button>
-      Current step: {stepIndex}
+      Step: {stepIndex + 1}/{stepCount}
     </div>
   );
 }
