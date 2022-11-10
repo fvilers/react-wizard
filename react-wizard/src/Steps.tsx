@@ -1,14 +1,28 @@
-import { Children, isValidElement, PropsWithChildren, ReactNode } from "react";
+import React, {
+  Children,
+  cloneElement,
+  isValidElement,
+  PropsWithChildren,
+  ReactNode,
+} from "react";
 import Step from "./Step";
 import StepObject from "./StepObject";
-import useSteps from "./useSteps";
+import { useWizard } from "./WizardContext";
 
 type Props = PropsWithChildren<{}>;
 
 function Steps({ children }: Props) {
   const steps = createStepsFromChildren(children);
+  const { stepIndex } = useWizard();
+  const currentStep = steps.at(stepIndex);
 
-  return useSteps(steps);
+  if (currentStep === undefined || !isValidElement(currentStep.element)) {
+    return null;
+  }
+
+  const element = cloneElement(currentStep.element, {});
+
+  return <>{element}</>;
 }
 
 function createStepsFromChildren(children: ReactNode) {

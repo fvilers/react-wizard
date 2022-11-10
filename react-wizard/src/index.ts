@@ -1,5 +1,4 @@
 export { default as Step } from "./Step";
 export { default as StepObject } from "./StepObject";
 export { default as Steps } from "./Steps";
-export { default as useSteps } from "./useSteps";
 export { default as Wizard } from "./Wizard";
