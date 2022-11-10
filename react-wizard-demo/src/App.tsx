@@ -1,4 +1,5 @@
 import { Step, Steps, Wizard } from "@fvilers/react-wizard";
+import WizardNavigation from "./WizardNavigation";
 
 function App() {
   return (
@@ -20,7 +21,15 @@ function App() {
               </div>
             }
           />
+          <Step
+            element={
+              <div>
+                <h2>Step 3</h2>
+              </div>
+            }
+          />
         </Steps>
+        <WizardNavigation />
       </Wizard>
     </div>
   );

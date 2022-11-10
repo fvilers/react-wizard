@@ -9,9 +9,9 @@ import Step from "./Step";
 import StepObject from "./StepObject";
 import { useWizard } from "./WizardContext";
 
-type Props = PropsWithChildren<{}>;
+export type StepsProps = PropsWithChildren<{}>;
 
-function Steps({ children }: Props) {
+function Steps({ children }: StepsProps) {
   const steps = createStepsFromChildren(children);
   const { stepIndex } = useWizard();
   const currentStep = steps.at(stepIndex);
