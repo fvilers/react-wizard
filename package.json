@@ -3,7 +3,8 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "build:lib": "yarn workspace @fvilers/react-wizard run build",
-    "start": "yarn workspace react-wizard-demo run start"
+    "start:demo": "yarn workspace react-wizard-demo run start",
+    "start:lib": "yarn workspace @fvilers/react-wizard run start"
   },
   "workspaces": [
     "react-wizard",

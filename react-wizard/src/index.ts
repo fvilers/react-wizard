@@ -1,3 +1,2 @@
-export function hello() {
-  console.log("Hello world");
-}
+// export * from "./Wizard";
+export { default as Wizard } from "./Wizard";
