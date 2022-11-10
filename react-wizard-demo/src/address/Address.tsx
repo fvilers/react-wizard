@@ -1,11 +1,17 @@
-import AddressForm from "./AddressForm";
+import { useWizard } from "@fvilers/react-wizard";
+import AddressForm, { AddressValues } from "./AddressForm";
+
+const KEY = "react-wizard-demo:address";
 
 function Address() {
-  const handleAddress = () => {
-    // TODO: save address
+  const address = JSON.parse(window.localStorage.getItem(KEY) ?? "{}");
+  const { next } = useWizard();
+  const handleAddress = (address: AddressValues) => {
+    window.localStorage.setItem(KEY, JSON.stringify(address));
+    next();
   };
 
-  return <AddressForm onSubmit={handleAddress} />;
+  return <AddressForm onSubmit={handleAddress} value={address} />;
 }
 
 export default Address;

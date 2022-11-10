@@ -9,10 +9,10 @@ export type AddressValues = {
 
 type Props = FormProps<AddressValues>;
 
-function AddressForm({ disabled, errorMessage, onSubmit }: Props) {
-  const [street, setStreet] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [city, setCity] = useState("");
+function AddressForm({ disabled, errorMessage, onSubmit, value }: Props) {
+  const [street, setStreet] = useState(value?.street ?? "");
+  const [postalCode, setPostalCode] = useState(value?.postalCode ?? "");
+  const [city, setCity] = useState(value?.city ?? "");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit({ street, postalCode, city });
@@ -52,6 +52,8 @@ function AddressForm({ disabled, errorMessage, onSubmit }: Props) {
           value={city}
         />
       </div>
+
+      {errorMessage && <div> {errorMessage}</div>}
 
       <div>
         <button type="submit">Submit</button>

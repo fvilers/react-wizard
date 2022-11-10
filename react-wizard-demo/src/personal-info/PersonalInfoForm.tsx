@@ -8,9 +8,9 @@ export type PersonalInfoValues = {
 
 type Props = FormProps<PersonalInfoValues>;
 
-function PersonalInfoForm({ disabled, errorMessage, onSubmit }: Props) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+function PersonalInfoForm({ disabled, errorMessage, onSubmit, value }: Props) {
+  const [firstName, setFirstName] = useState(value?.firstName ?? "");
+  const [lastName, setLastName] = useState(value?.lastName ?? "");
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit({ firstName, lastName });
@@ -39,6 +39,8 @@ function PersonalInfoForm({ disabled, errorMessage, onSubmit }: Props) {
           value={lastName}
         />
       </div>
+
+      {errorMessage && <div> {errorMessage}</div>}
 
       <div>
         <button type="submit">Submit</button>
