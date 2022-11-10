@@ -1,7 +1,9 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-function Wizard() {
-  return <div>Hello from Wizard</div>;
+type Props = PropsWithChildren<{}>;
+
+function Wizard({ children }: Props) {
+  return <>{children}</>;
 }
 
 export default Wizard;
