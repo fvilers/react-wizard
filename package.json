@@ -4,6 +4,7 @@
     "build": "yarn workspaces run build"
   },
   "workspaces": [
+    "react-wizard",
     "react-wizard-demo"
   ]
 }

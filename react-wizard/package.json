@@ -1,0 +1,24 @@
+{
+  "name": "react-wizard",
+  "version": "0.0.0",
+  "description": "A flexible Wizard component for React",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fvilers/react-wizard.git"
+  },
+  "keywords": [
+    "react",
+    "react-library",
+    "react-wizard",
+    "react-component"
+  ],
+  "author": "Fabian Vilers <fabian.vilers@dev-one.com> (https://www.dev-one.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fvilers/react-wizard/issues"
+  },
+  "homepage": "https://github.com/fvilers/react-wizard#readme"
+}
