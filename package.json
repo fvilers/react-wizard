@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn workspaces run build"
+    "build": "yarn workspaces run build",
+    "build:lib": "yarn workspace @fvilers/react-wizard run build",
+    "start": "yarn workspace react-wizard-demo run start"
   },
   "workspaces": [
     "react-wizard",
