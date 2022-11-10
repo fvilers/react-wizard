@@ -1,4 +1,6 @@
 import { Step, Steps, Wizard } from "@fvilers/react-wizard";
+import Address from "./address/Address";
+import PersonalInfo from "./personal-info/PersonalInfo";
 import WizardNavigation from "./WizardNavigation";
 
 function App() {
@@ -7,27 +9,8 @@ function App() {
       <h1>React Wizard Demo</h1>
       <Wizard>
         <Steps>
-          <Step
-            element={
-              <div>
-                <h2>Step 1</h2>
-              </div>
-            }
-          />
-          <Step
-            element={
-              <div>
-                <h2>Step 2</h2>
-              </div>
-            }
-          />
-          <Step
-            element={
-              <div>
-                <h2>Step 3</h2>
-              </div>
-            }
-          />
+          <Step element={<PersonalInfo />} />
+          <Step element={<Address />} />
         </Steps>
         <WizardNavigation />
       </Wizard>
